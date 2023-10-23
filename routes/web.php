@@ -16,3 +16,35 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/detail', function () {
+    return view('detail');
+});
+
+Route::get('/admin', function () {
+    return view('admin/dashboard');
+});
+
+Route::get('/buat', function () {
+    return view('admin/create');
+});
+
+Route::get('/masuk', function () {
+    return view('masuk');
+})->name('Halaman Masuk');
+
+Route::get('/succes', function () {
+    return view('berhasil');
+})->name('Succes');
+
+Route::get('/prov', function () {
+    return view('prov');
+});
+
+Route::get('/signup', function () {
+    return view('signup');
+});
+
+Route::get('/akungagal', function () {
+    return view('akungagal');
+});
