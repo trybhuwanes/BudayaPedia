@@ -1,11 +1,10 @@
-<!DOCTYPE html> <html lang="en"> <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
 @vite('resources/css/app.css')
 <title>Homepage</title>
 </head>
 
-<body class= "font-poppins">
+<body class="font-poppins">
     <div style="width: 100%; height: 100%; position: absolute; background: white ">
         <div
             style="left: 100px; top: 501px; position: absolute; color: #332317; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
@@ -32,17 +31,17 @@
                 style="width: 952px; height: 360px; left: 0px; top: 0px; position: absolute; background: #D3BA84; border-radius: 8px">
             </div> -->
             <img style="width: 1110px; height: 360px; left: 0px; top: 0px; position: absolute; border-radius: 8px"
-                src="assetss/img/image.png" />
+                src="assets/img/image.png" />
             <div
                 style="left: 170px; top: 137px; position: absolute; text-align: center; color: white; font-size: 30px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 3px; word-wrap: break-word">
                 Kunjungi Berbagai Budaya Nusantara</div>
-            <div style="width: 395px; height: 45px; left: 375px; top: 204px; position: absolute">
-                <div
-                    style="width: 300px; height: 45px; left: 0px; top: 0px; position: absolute; background: #BB8760; border-radius: 25px">
-                </div>
-                <div
-                    style="width: 195.03px; left: 60px; top: 11px; position: absolute; text-align: center; color: white; font-size: 18px; font-family: Poppins; font-weight: 520; word-wrap: break-word">
-                    Pilih Provinsi</div>
+            <div style="width: 395px; height: 45px; left: 450px; top: 204px; position: absolute;  border-radius: 25px">
+                <!-- <div
+                    style="width: 300px; height:px; left: 0px; top: 0px; position: absolute; background: #BB8760; border-radius: 25px">
+                </div> -->
+                <button class="bg-brown2-500 hover:bg-brown2-700 text-white font-bold py-2 px-12 rounded-full">
+                Pilih Provinsi
+            </button>
             </div>
         </div>
         <div style="width: 100%; height: 46px; left: 120px; top: 34px; position: absolute">
@@ -58,7 +57,7 @@
                     style="width: 45px; height: 45px; left: 50px; top: 0px; position: absolute; background: #C4C4C4; border-radius: 9999px">
                 </div> -->
                 <img style="width: 45px; height: 45px; left: 0px; top: 0px; position: absolute; border-radius: 25px"
-                    src="assetss/img/dian.jpeg" />
+                    src="assets/img/dian.jpeg" />
             </div>
             <div
                 style="width: 0px; height: 33.50px; left: 799px; top: 6px; position: absolute; border: 1px #594745 solid">
@@ -147,8 +146,7 @@
                 <!-- <div
                     style="width: 28.94px; height: 14.48px; left: 3.39px; top: 5.99px; position: absolute; background: #4F0E0E">
                 </div> -->
-                <div
-                    style="width: 31px; height: 31px; left: 75px; top: 1px; position: absolute; background: #4F0E0E">
+                <div style="width: 31px; height: 31px; left: 75px; top: 1px; position: absolute; background: #4F0E0E">
                 </div>
                 <div style="width: 36px; height: 36px; left: 0px; top: 0px; position: absolute"></div>
             </div>

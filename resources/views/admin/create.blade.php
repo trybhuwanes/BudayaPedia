@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Soft UI Dashboard Tailwind - v1.0.5
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-tailwind
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html>
 
@@ -35,15 +21,9 @@
     <!-- sidenav  -->
     <aside
         class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
-        <div class="h-19.5">
-            <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden"
-                sidenav-close></i>
-            <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;" target="_blank">
-                <img src="./assets/img/logo-ct.png"
-                    class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8"
-                    alt="main_logo" />
-                <span class="font-jawapalsu ml-1 font-semibold transition-all duration-200 ease-nav-brand">BudayaPedia</span>
-            </a>
+        <div class="h-10">
+            <div style="margin-top:20px; left: 100px; top: 3px; text-align: center; color: #4F0E0E; font-size: 20px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">
+          BudayaPedia</div>
         </div>
 
         <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
@@ -121,58 +101,62 @@
             <h3 class="text-gray-900">Buat Konten</h3>
         </div>
         <div class="w-full px-12 py-6 mx-auto">
-            <form class="w-full max-w">
+            <form class="w-full max-w" method="POST" action="{{ route('admin.store') }}" enctype="multipart/form-data" >
+            @csrf
               <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full px-3">
-                  <label for="base-input" class="block mb-2 text-lg font-bold text-gray-900 dark:text-white">Provinsi</label>
-                  <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <label for="nama_prov" class="block mb-2 text-lg font-bold text-black">Provinsi</label>
+                  <input type="text" id="nama_prov" name="nama_prov" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 </div>
               </div>
 
               <div class="flex flex-wrap -mx-3 mb-2">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label for="message" class="block mb-2 text-lg font-bold text-gray-900 dark:text-white">Sejarah</label>                  
-                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
-                  <p class="mt-1 text-sm text-black-500 dark:text-black-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                  <label for="sejarah" class="block mb-2 text-lg font-bold text-black">Sejarah</label>                  
+                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="pict_sejarah" type="file" name="pict_sejarah">
+                  <p class="mt-1 text-sm text-black" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+                  <textarea id="sejarah" name="sejarah" rows="4" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
                 </div>
               </div>
 
               <div class="flex flex-wrap -mx-3 mb-2">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label for="message" class="block mb-2 text-lg font-bold text-gray-900 dark:text-white">Baju Adat</label>
-                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
-                  <p class="mt-1 text-sm text-black-500 dark:text-black-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                  <label for="baju_adat" class="block mb-2 text-lg font-bold text-black">Baju Adat</label>
+                  {{-- <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="pict_baju_adat" type="file" name="pict_baju_adat">
+                  <p class="mt-1 text-sm text-black" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p> --}}
+                  <textarea id="baju_adat" name="baju_adat" rows="4" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
                 </div>
               </div>
 
               <div class="flex flex-wrap -mx-3 mb-2">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label for="message" class="block mb-2 text-lg font-bold text-gray-900 dark:text-white">Rumah Adat</label>
-                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
-                  <p class="mt-1 text-sm text-black-500 dark:text-black-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                  <label for="message" class="block mb-2 text-lg font-bold text-black">Rumah Adat</label>
+                  {{-- <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="pict_rumah_adat" type="file" name="pict_rumah_adat">
+                  <p class="mt-1 text-sm text-black" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p> --}}
+                  <textarea id="rumah_adat" name="rumah_adat" rows="4" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
                 </div>
               </div>
 
               <div class="flex flex-wrap -mx-3 mb-2">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label for="message" class="block mb-2 text-lg font-bold text-gray-900 dark:text-white">Lagu Daerah</label>
-                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
-                  <p class="mt-1 text-sm text-black-500 dark:text-black-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                  <label for="message" class="block mb-2 text-lg font-bold text-black">Lagu Daerah</label>
+                  {{-- <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="pict_lagu_daerah" type="file" name="pict_lagu_daerah">
+                  <p class="mt-1 text-sm text-black" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p> --}}
+                  <textarea id="lagu_daerah" name="lagu_daerah" rows="4" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
                 </div>
               </div>
 
-              <div class="flex flex-wrap -mx-3 mb-2">
+              <div class="flex flex-wrap -mx-3 mb-2 pb-6">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                  <label for="message" class="block mb-2 text-lg font-bold text-gray-900 dark:text-white">Senjata</label>
-                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
-                  <p class="mt-1 text-sm text-black-500 dark:text-black-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                  <label for="message" class="block mb-2 text-lg font-bold text-black">Senjata</label>
+                  {{-- <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="pict_senjata" type="file" name="pict_senjata">
+                  <p class="mt-1 text-sm text-black" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p> --}}
+                  <textarea id="senjata" name="senjata" rows="4" class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
                 </div>
               </div>
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Simpan
+              </button>
             </form>
             {{-- <footer class="pt-4">
           
@@ -182,8 +166,6 @@
     </main>
 
 </body>
-<!-- plugin for charts  -->
-<script src="./assets/js/plugins/chartjs.min.js" async></script>
 <!-- plugin for scrollbar  -->
 <script src="./assets/js/plugins/perfect-scrollbar.min.js" async></script>
 <!-- github button -->

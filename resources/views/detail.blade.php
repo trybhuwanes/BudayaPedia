@@ -7,14 +7,15 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="font-poppins">
     <div class="bg-white flex flex-col pr-px">
-        <div class="self-center flex w-[950px] max-w-full items-start justify-between gap-5 mt-9 px-5 max-md:flex-wrap">
-            <div class="text-red-950 text-center text-2xl tracking-wider mt-2.5">
-                BudayaPedia
+        <div class="ml-24 flex w-[950px] max-w-full items-start justify-between gap-5 mt-9 max-md:flex-wrap">
+            <div class="h-10">
+                <div style="margin-top:5px; left: 100px; top: 3px; text-align: center; color: #4F0E0E; font-size: 20px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">
+              BudayaPedia</div>
             </div>
             <div class="flex items-start justify-between gap-5 max-md:justify-center">
-                <div class="text-stone-800 text-right text-base my-auto font-jawapalsu">
+                <div class="text-stone-800 text-right text-base my-auto">
                     Beranda Provinsi
                 </div>
                 <img loading="lazy" srcset="..."
@@ -38,34 +39,27 @@
             Alam Yuliyon
         </div>
         <div
-            class="self-center flex w-[945px] max-w-full items-start justify-between gap-5 mt-12 px-5 max-md:flex-wrap max-md:justify-center max-md:mt-10">
-            <div class="flex flex-col flex-1 px-5 py-4 rounded-md border-2 border-solid border-red-400">
-                <div class="text-red-400 text-center text-base font-medium self-center">
-                    Sejarah
-                </div>
-            </div>
-            <div class="flex flex-col flex-1 px-5 py-4 rounded-md border-2 border-solid border-red-400">
-                <div class="text-red-400 text-center text-base font-medium self-center">
-                    Baju Adat
-                </div>
-            </div>
-            <div class="flex flex-col flex-1 px-5 py-4 rounded-md border-2 border-solid border-red-400">
-                <div class="text-red-400 text-center text-base font-medium self-center">
-                    Lagu Daerah
-                </div>
-            </div>
-            <div class="bg-red-400 flex flex-col flex-1 px-5 py-4 rounded-md">
-                <div class="text-white text-center text-base font-medium self-center">
-                    Rumah Adat
-                </div>
-            </div>
-            <div class="flex flex-col flex-1 px-5 py-4 rounded-md border-2 border-solid border-red-400">
-                <div class="text-red-400 text-center text-base font-medium self-center">
-                    Senjata
-                </div>
-            </div>
+            class="self-center flex w-[700px] max-w-full items-start justify-between gap-5 mt-12 px-5 max-md:flex-wrap max-md:justify-center max-md:mt-10">
+
+            <button class="bg-transparent hover:bg-brown2-500 text-brown2-700 font-semibold hover:text-white py-2 px-4 border border-brown2-500 hover:border-transparent rounded">
+                Sejarah
+            </button>
+            <button class="bg-transparent hover:bg-brown2-500 text-brown2-700 font-semibold hover:text-white py-2 px-4 border border-brown2-500 hover:border-transparent rounded">
+                Baju Adat
+            </button>
+            <button class="bg-transparent hover:bg-brown2-500 text-brown2-700 font-semibold hover:text-white py-2 px-4 border border-brown2-500 hover:border-transparent rounded">
+                Lagu Daerah
+            </button>
+            
+            <button class="bg-brown2-500 hover:bg-brown2-700 text-white font-bold py-2 px-4 rounded">
+                Rumah Adat
+            </button>
+            
+            <button class="bg-transparent hover:bg-brown2-500 text-brown2-700 font-semibold hover:text-white py-2 px-4 border border-brown2-500 hover:border-transparent rounded">
+                Senjata
+            </button>
         </div>
-        <div class="self-center w-[944px] max-w-full mt-11 px-5 max-md:mt-10">
+        <div class="self-center max-w-full ml-24 mr-24 mt-11">
             <div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
                 <div class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
                     <img loading="lazy" src="{{ URL('assets\img\rumah-jawa-timur.png') }}"
@@ -89,7 +83,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-stone-600 text-justify text-base leading-[180%] mt-8 max-md:max-w-full">
+        <div class="text-stone-600 text-justify text-base leading-[180%] ml-24 mr-24 mt-8 max-md:max-w-full">
             Qui doloremque iure ut fuga doloremque est dolor molestiae quo accusamus
             odio cum libero odit! Ea porro enim et dolor nesciunt sit ullam dignissimos
             et perspiciatis perspiciatis cum nulla aperiam sit explicabo corporis. Qui
@@ -107,7 +101,7 @@
             et perspiciatis perspiciatis cum nulla aperiam sit explicabo corporis.
             <br />
         </div>
-        <div class="bg-orange-300 self-stretch flex grow flex-col mt-12 pt-7 pb-10 px-5 max-md:max-w-full max-md:mt-10">
+        <div class="bg-brown-300 self-stretch flex grow flex-col mt-12 pt-7 pb-10 px-5 max-md:max-w-full max-md:mt-10">
             <div class="self-center flex w-[950px] max-w-full items-start justify-between gap-5 max-md:flex-wrap">
                 <div class="flex flex-col">
                     <div class="text-red-950 text-center text-2xl tracking-wider">

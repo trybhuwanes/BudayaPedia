@@ -17,12 +17,10 @@
             style="width: 540px; left: 360px; top: 350px; position: absolute; text-align: center; color: #594745; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 28.80px; word-wrap: break-word">
             Anda telah berhasil terdaftar.<br />Mari bersama menjelajah budaya bangsa!</div>
         <div style="width: 180px; height: 45px; left: 540px; top: 450px; position: absolute">
-            <div
-                style="width: 180px; height: 45px; left: 0px; top: 0px; position: absolute; background: #BB8760; border-radius: 6px">
-            </div>
-            <div
-                style="left: 55px; top: 10px; position: absolute; text-align: center; color: white; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
-                Beranda</div>
+            
+        <button class="bg-brown2-500 hover:bg-brown2-700 text-white font-bold py-2 px-11 rounded w-full text-center"> 
+            Beranda
+            </button>
         </div>
         <div
             style="left: 400px; top: 182px; position: absolute; text-align: center; color: #4F0E0E; font-size: 64px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 3.20px; word-wrap: break-word">
