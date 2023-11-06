@@ -18,9 +18,11 @@
             Anda telah berhasil terdaftar.<br />Mari bersama menjelajah budaya bangsa!</div>
         <div style="width: 180px; height: 45px; left: 540px; top: 450px; position: absolute">
             
-        <button class="bg-brown2-500 hover:bg-brown2-700 text-white font-bold py-2 px-11 rounded w-full text-center"> 
-            Beranda
+        <a href="{{ route('content.home') }}">
+            <button class="bg-brown2-500 hover:bg-brown2-700 text-white font-bold py-2 px-11 rounded w-full text-center"> 
+                Beranda
             </button>
+        </a>
         </div>
         <div
             style="left: 400px; top: 182px; position: absolute; text-align: center; color: #4F0E0E; font-size: 64px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 3.20px; word-wrap: break-word">

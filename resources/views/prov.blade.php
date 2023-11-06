@@ -1,19 +1,20 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> @vite('resources/css/app.css') <link
-    rel="stylesheets" href="">
+<!DOCTYPE html> 
+<html lang="en">
+     <head> <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> @vite('resources/css/app.css')
+     <link rel="stylesheets" href="">
 <title>Halaman Provinsi</title>
 </head>
-<body> <div style="width: 100%; height: 100%; position: relative; background: white"> <div style="width: 100%; height:
-    100%; left: 100px; top: 125px; position: absolute"> <div style="left: 0px; top: 0px; position: absolute; color:
-    #332317; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Semua Provinsi</div>
-    <div style="width: 216px; height: 179px; left: 0px; top: 46px; position: absolute"> <div style="width: 216px;
-        height: 140px; left: 0px; top: 0px; position: absolute"> <div style="width: 216px; height: 140px; left: 0px;
-        top: 0px; position: absolute; background: #F4F4F4; border-radius: 8px"></div>
-    <img style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute; border-radius: 8px" src="{{
-    URL('assets/img/jatim.jpg')}}" />
+<body> <div style="width: 1152px; height: 1457px; position: relative; background: white"> 
+<div style="width: 951px; height: 431px; left: 180px; top: 125px; position: absolute">
+ <div style="left: 0px; top: 0px; position: absolute; color:  #332317; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Semua Provinsi</div>
+    <div style="width: 216px; height: 179px; left: 0px; top: 46px; position: absolute">
+     <div style="width: 216px;  height: 140px; left: 0px; top: 0px; position: absolute">
+      <div style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute; background: #F4F4F4; border-radius: 8px"></div>
+    <img style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute; border-radius: 8px" src="{{ URL('assets/img/jatim.jpg')}}" />
     </div>
-    <div style="left: 0px; top: 152px; position: absolute; color: #332317; font-size: 18px; font-family: Poppins;
-    font-weight: 400; word-wrap: break-word">Jawa Timur</div>
+    <div style="left: 0px; top: 152px; position: absolute; color: #332317; font-size: 18px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Jawa Timur</div>
     </div>
     <div style="width: 216px; height: 179px; left: 0px; top: 252px; position: absolute">
         <div style=" width: 216px; height: 140px; left: 0px; top: 0px; position: absolute">
@@ -109,10 +110,10 @@
             Sulawesi Selatan</div>
     </div>
     </div>
-    <div style="width: 951px; height: 638px; left: 100px; top: 125px; position: absolute">
-        <div
+    <div style="width: 951px; height: 638px; left: 180px; top: 125px; position: absolute">
+        <!-- <div
             style="left: 0px; top: 0px; position: absolute; color: #332317; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
-            Semua Provinsi</div>
+            Semua Provinsi</div> -->
         <div style="width: 216px; height: 179px; left: 0px; top: 458px; position: absolute">
             <div style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute">
                 <div
@@ -151,7 +152,7 @@
             <div style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute">
                 <div
                     style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute; background: #F4F4F4; border-radius: 8px">
-                </div>-->
+                </div>
                 <div style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute">
                     <div
                         style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute; background: #F4F4F4; border-radius: 8px">
@@ -182,7 +183,7 @@
             </div>
         </div>
     </div>
-    <div style="width: 951px; height: 180px; left: 100px; top: 790px; position: absolute">
+    <div style="width: 951px; height: 180px; left: 180px; top: 790px; position: absolute">
         <div style="width: 216px; height: 179px; left: 0px; top: 0px; position: absolute">
             <div style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute">
                 <div
@@ -252,7 +253,7 @@
             </div>
         </div>
     </div>
-    <div style="width: 952px; height: 588px; left: 100px; top: 997px; position: absolute">
+    <div style="width: 952px; height: 588px; left: 180px; top: 997px; position: absolute">
         <div style="width: 216px; height: 179px; left: 0px; top: 0px; position: absolute">
             <div style="width: 216px; height: 140px; left: 0px; top: 0px; position: absolute">
                 <div
@@ -463,56 +464,55 @@
         </div>
     </div>
     <div style="width: 100%; height: 46px; left: 120px; top: 34px; position: absolute">
-        <div style="left: 610px; top: 10px; position: absolute; text-align: right"><span
-                style="color: #BB8760; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Beranda</span><span
-                style="color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+        <div style="left: 779px; top: 11px; position: absolute; text-align: right"><span
+                style="color: #332317;font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Beranda</span><span
+                style="color: #BB8760; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                 Provinsi </span></div>
         <div
-            style="left: 885px; top: 10px; position: absolute; text-align: right; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400">
+            style="left: 1034px; top: 11px; position: absolute; text-align: right; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400">
             Hi, Aidaa</div>
-        <div style="width: 45px; height: 45px; left: 819px; top: 0px; position: absolute">
+        <div style="width: 45px; height: 45px; left: 978px; top: 0px; position: absolute">
             <img style="width: 45px; height: 45px; left: 0px; top: 0px; position: absolute; border-radius: 25px"
                 src="assets/img/dian.jpeg" />
         </div>
-        <div style="width: 0px; height: 33.50px; left: 799px; top: 6px; position: absolute; border: 1px #594745 solid">
+        <div style="width: 0px; height: 33.50px; left: 956px; top: 6px; position: absolute; border: 1px #594745 solid">
         </div>
         <div
-            style="left: 0px; top: 2px; position: absolute; text-align: center; color: #4F0E0E; font-size: 24px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 1.20px; word-wrap: break-word">
-            BudayaPedia</div>
-    </div>
-    <div style="width: 86px; height: 0px; left: 806px; top: 70px; position: absolute; border: 2px #BB8760 solid"></div>
+                    style="left: 0px; top: 0px; position: absolute; text-align: center; color: #4F0E0E; font-size: 30px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">
+                    BudayaPedia</div>
+            </div>
+    <div style="width: 86px; height: 0px; left: 956px; top: 70px; position: absolute; border: 2px #BB8760 solid"></div>
     <div style="width: 100%; height: 241px; left: 0px; top: 1666px; position: absolute">
         <div style="width: 100%; height: 241px; left: 0px; top: 0px; position: absolute; background: #D3BA84">
-        </div>
-        <div
-            style="left: 550px; top: 179px; position: absolute; text-align: center; color: #4F0E0E; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
-            Made with love by ADA</div>
-        <div
-            style="left: 912px; top: 22px; position: absolute; text-align: center; color: #4F0E0E; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
-            Find us:</div>
-        <div
-            style="width: 400px; left: 101px; top: 74px; position: absolute; color: #4F0E0E; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
-            Jl. Sigura - gura 10, <br />Kel. Sumbersari, Kec. Lowokwaru, <br />Kota Malang</div>
-        <div style="width: 36px; height: 36px; left: 839px; top: 58px; position: absolute">
-            <!-- <div
-                    style="width: 28.94px; height: 14.48px; left: 3.39px; top: 5.99px; position: absolute; background: #4F0E0E">
-                </div> -->
-            <div style="width: 31px; height: 31px; left: 75px; top: 1px; position: absolute; background: #4F0E0E">
             </div>
-            <div style="width: 36px; height: 36px; left: 0px; top: 0px; position: absolute"></div>
-        </div>
-        <div style="width: 31px; height: 31px; left: 985px; top: 59px; position: absolute; background: #4F0E0E">
-        </div>
-        <div style="width: 38px; height: 38px; left: 1013px; top: 56px; position: absolute">
-            <div style="width: 31px; height: 31px; left: 40px; top: 3.17px; position: absolute; background: #4F0E0E">
+            <div
+                style="left: 550px; top: 179px; position: absolute; text-align: center; color: #4F0E0E; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
+                Made with love by ADA</div>
+            <div
+                style="left: 912px; top: 22px; position: absolute; text-align: center; color: #4F0E0E; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
+                Find us:</div>
+            <div
+                style="width: 400px; left: 101px; top: 74px; position: absolute; color: #4F0E0E; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">
+                Jl. Sigura - gura 10, <br />Kel. Sumbersari, Kec. Lowokwaru, <br />Kota Malang</div>
+            <div style="width: 36px; height: 36px; left: 839px; top: 58px; position: absolute">
+                <div
+                    style="width: 31px; height: 31px; left: 75px; top: 1px; position: absolute; background: #4F0E0E">
+                </div>
+                <div style="width: 36px; height: 36px; left: 0px; top: 0px; position: absolute"></div>
             </div>
+            <div style="width: 31px; height: 31px; left: 985px; top: 59px; position: absolute; background: #4F0E0E">
+            </div>
+            <div style="width: 38px; height: 38px; left: 1013px; top: 56px; position: absolute">
+                <div
+                    style="width: 31px; height: 31px; left: 40px; top: 3.17px; position: absolute; background: #4F0E0E">
+                </div>
+            </div>
+            <div style="width: 31px; height: 31px; left: 1120px; top: 59px; position: absolute; background: #4F0E0E">
+            </div>
+            <div
+                style="left: 101px; top: 21px; position: absolute; text-align: center; color: #4F0E0E; font-size: 24px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 1.20px; word-wrap: break-word">
+                BudayaPedia</div>
         </div>
-        <div style="width: 31px; height: 31px; left: 1120px; top: 59px; position: absolute; background: #4F0E0E">
-        </div>
-        <div
-            style="left: 101px; top: 21px; position: absolute; text-align: center; color: #4F0E0E; font-size: 24px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 1.20px; word-wrap: break-word">
-            BudayaPedia</div>
-    </div>
     </div>
     </body>
 

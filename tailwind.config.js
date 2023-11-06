@@ -57,7 +57,7 @@ module.exports = {
         600: "#BB8760",
         700: "#BB8760",
         800: "#BB8760",
-        900: "#BB8760",
+        900: "#B48059",
       },
       darkbrown: {
         DEFAULT: colors.slate,
