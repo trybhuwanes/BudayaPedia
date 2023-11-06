@@ -33,7 +33,7 @@
                 <ul class="pb-2 space-y-2">
                     <li>
                         <a
-                        class="flex items-center w-full p-2 text-base text-black transition duration-75 rounded-lg group hover:bg-brown-50">
+                            class="flex items-center p-2 text-base text-black rounded-lg bg-gradient-to-r from-white to-brown-50 hover:bg-gray-100 group">
                             <svg class="w-6 h-6 text-black transition duration-75 group-hover:text-gray-900 "
                                 fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
@@ -44,7 +44,9 @@
                     </li>
 
                     <li>
-                        <a class="flex items-center p-2 text-base text-black rounded-lg bg-gradient-to-r from-white to-brown-50 hover:bg-gray-100 group">
+                        <button type="button"
+                            class="flex items-center w-full p-2 text-base text-black transition duration-75 rounded-lg group hover:bg-brown-50 "
+                            aria-controls="dropdown-crud" data-collapse-toggle="dropdown-crud">
                             <svg class="flex-shrink-0 w-6 h-6 text--black transition duration-75 group-hover:text-gray-900 "
                                 fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true">
@@ -53,7 +55,7 @@
                                 </path>
                             </svg>
                             <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Buat</span>
-                        </a>
+                        </button>
                     </li>
                 </ul>
 
@@ -70,31 +72,34 @@
         <div class="block sm:flex items-center justify-between border-b bg-brown-500 lg:mt-1.5 dark:bg-brown-500">
             <div class="w-full mb-1">
                 <div class="mx-8 mb-4 mt-5">
-                    <h1 class="pt-3 text-xl font-semibold text-gray-900 sm:text-2xl ">Buat Konten</h1>
+                    <h1 class="pt-3 text-xl font-semibold text-gray-900 sm:text-2xl ">Edit Konten</h1>
                 </div>
             </div>
         </div>
         <div class="mt-4 mx-8 space-y-6">
-            <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.update', $content->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="grid grid-cols-12 gap-x-12">
                     <div class="col-span-full mb-4">
                         <label for="nama_prov" class="text-lg font-bold block mb-2 text-black">Nama
                             Provinsi</label>
-                        <input type="text" name="nama_prov" id="nama_prov"
+                        <input value="{{ $content->nama_prov }}" type="text" name="nama_prov" id="nama_prov"
                             class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                             placeholder="Masukkan nama provinsi" required>
                     </div>
                     <div class="col-span-12 mb-4">
                         <label for="sejarah" class="block mb-2 text-lg font-bold text-black ">Sejarah</label>
-
+                        {{-- <img src="assets/img/{{ $content->pict_sejarah }}" width="300px"> --}}
+                        <img src="{{asset('public/assets/img')}}<?="/".$content->pict_sejarah?>" style="width:400px; height:300px" alt="$content->pict_sejarah">
+                        
                         <input
-                            class="mb-4 block w-full text-sm text-black border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none"
-                            name="pict_sejarah" id="pict_sejarah" type="file">
+                            class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none"
+                            name="pict_sejarah" id="pict_sejarah" type="file" placeholder="file">
 
                         <textarea id="sejarah" rows="4" name="sejarah"
-                            class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
-                            placeholder="Masukkan sejarah"></textarea>
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                            placeholder="Masukkan sejarah">{{ $content->sejarah }}</textarea>
                     </div>
 
                     <div class="col-span-12 mb-4">
@@ -102,43 +107,43 @@
                             Adat</label>
 
                         <input
-                            class="mb-4 block w-full text-sm text-black border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
+                            class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
                             name="pict_baju_adat" id="pict_baju_adat" type="file">
 
                         <textarea id="baju_adat" rows="4" name="baju_adat"
-                            class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
-                            placeholder="Masukkan deskripsi baju adat"></textarea>
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                            placeholder="Masukkan deskripsi baju adat">{{ $content->baju_adat }}</textarea>
                     </div>
                     <div class="col-span-12 mb-4">
                         <label for="rumah_adat" class="text-lg font-bold block mb-2 text-black">Rumah
                             Adat</label>
 
                         <input
-                            class="mb-4 block w-full text-sm text-black border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
+                            class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none "
                             name="pict_rumah_adat" id="pict_rumah_adat" type="file">
 
                         <textarea id="rumah_adat" rows="4" name="rumah_adat"
-                            class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
-                            placeholder="Masukkan deskripsi rumah adat"></textarea>
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
+                            placeholder="Masukkan deskripsi rumah adat">{{ $content->rumah_adat }}</textarea>
                     </div>
                     <div class="col-span-12 mb-4">
                         <label for="lagu_daerah" class="text-lg font-bold block mb-2 text-black">Lagu
                             Daerah</label>
                         <input
-                            class="mb-4 block w-full text-sm text-black border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
+                            class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none "
                             name="pict_lagu_daerah" id="pict_lagu_daerah" type="file">
                         <textarea id="lagu_daerah" rows="4" name="lagu_daerah"
-                            class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
-                            placeholder="Masukkan deskripsi lagu daerah"></textarea>
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
+                            placeholder="Masukkan deskripsi lagu daerah">{{ $content->lagu_daerah }}</textarea>
                     </div>
                     <div class="col-span-12 mb-4">
                         <label for="senjata" class="text-lg font-bold block mb-2 text-black">Senjata</label>
                         <input
-                            class="mb-4 block w-full text-sm text-black border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+                            class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"
                             name="pict_senjata" id="pict_senjata" type="file">
                         <textarea id="senjata" rows="4" name="senjata"
-                            class="block p-2.5 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
-                            placeholder="Masukkan deskripsi senjata"></textarea>
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
+                            placeholder="Masukkan deskripsi senjata">{{ $content->senjata }}</textarea>
                     </div>
                     <div class="ml-1 mb-10">
                         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">

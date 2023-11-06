@@ -36,8 +36,8 @@ module.exports = {
       brown: {
         DEFAULT: colors.slate,
         50: "#D3BA84",
-        100: "#D3BA84",
-        200: "#D3BA84",
+        100: "#BB8760",
+        200: "#FADAC2",
         300: "#D3BA84",
         400: "#D3BA84",
         500: "#D3BA84",
