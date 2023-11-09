@@ -4,43 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BudayaPedia | Masuk</title>
+    <title>Admin | Masuk</title>
     @vite('resources/css/app.css')
 </head>
 
 <body class= "font-poppins">
-    <nav class="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
-        <div class="flex flex-wrap justify-between p-3 ml-9">
-            <a href="{{ route('content.home') }}">
-                <div class="h-10">
-                    <div
-                        style="margin-top:10px; left: 100px; top: 3px; text-align: center; color: #4F0E0E; font-size: 20px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">
-                        BudayaPedia</div>
-                </div>
-            </a>
-            <div class="items-center hidden w-full md:flex md:w-auto mr-9" id="navbar-sticky">
-                <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white ">
-                    <li>
-                        <a href="{{ route('content.home') }}" class="block py-2 pl-3 pr-1 text-black bg-white rounded md:bg-transparent "
-                            aria-current="page">Beranda</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('content.provinsi') }}"
-                            class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent ">Provinsi</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('register') }}">
-                            <button class="bg-brown2-50 hover:bg-brown2-900 text-white font-bold py-2 px-8 rounded w-full">
-                                Daftar
-                            </button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
     <main>
         <div style="width: 100%; height: 100%; position: absolute; background: white;">
             <div style="width: 100%; height: 420px; left: 15%; top: 150px; position: absolute">

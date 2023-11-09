@@ -5,14 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
-    <title>Dashboard Admin BudayaPedia</title>
+    <title>Admin | Edit Content</title>
 
     <script src=//code.jquery.com/jquery-3.5.1.slim.min.js integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
         crossorigin=anonymous></script>
-    {{-- <script src="resources/js/index.js"></script> --}}
-
-    <!-- Main Styling -->
-    {{-- <link href="resources/css/style.css" rel="stylesheet" /> --}}
 
 </head>
 
@@ -91,7 +87,7 @@
                     <div class="col-span-12 mb-4">
                         <label for="sejarah" class="block mb-2 text-lg font-bold text-black ">Sejarah</label>
                         {{-- <img src="assets/img/{{ $content->pict_sejarah }}" width="300px"> --}}
-                        <img src="{{asset('public/assets/img')}}<?="/".$content->pict_sejarah?>" style="width:400px; height:300px" alt="$content->pict_sejarah">
+                        <img src="{{asset('public/assets/img')}}<?="/".$content->pict_sejarah?>" style="width:400px; height:200px" alt="{{ $content->pict_sejarah }}" class="mb-5">
                         
                         <input
                             class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none"
@@ -106,6 +102,8 @@
                         <label for="baju_adat" class="text-lg font-bold block mb-2 text-black">Baju
                             Adat</label>
 
+                        <img src="{{ URL('assets\img\$content->pict_baju_adat') }}" style="width:400px; height:200px" alt="{{ $content->pict_baju_adat }}" class="mb-5">
+
                         <input
                             class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
                             name="pict_baju_adat" id="pict_baju_adat" type="file">
@@ -117,6 +115,7 @@
                     <div class="col-span-12 mb-4">
                         <label for="rumah_adat" class="text-lg font-bold block mb-2 text-black">Rumah
                             Adat</label>
+                        <img src="{{ URL('assets\img\$content->pict_rumah_adat') }}" style="width:400px; height:200px" alt="{{ $content->pict_rumah_adat }}" class="mb-5">
 
                         <input
                             class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none "
@@ -129,6 +128,8 @@
                     <div class="col-span-12 mb-4">
                         <label for="lagu_daerah" class="text-lg font-bold block mb-2 text-black">Lagu
                             Daerah</label>
+                        <img src="{{ URL('assets\img\$content->pict_lagu_daerah') }}" style="width:400px; height:200px" alt="{{ $content->pict_lagu_daerah }}" class="mb-5">
+
                         <input
                             class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none "
                             name="pict_lagu_daerah" id="pict_lagu_daerah" type="file">
@@ -138,6 +139,8 @@
                     </div>
                     <div class="col-span-12 mb-4">
                         <label for="senjata" class="text-lg font-bold block mb-2 text-black">Senjata</label>
+                        <img src="{{ URL('assets\img\$content->pict_senjata') }}" style="width:400px; height:200px" alt="{{ $content->pict_senjata }}" class="mb-5">
+
                         <input
                             class="mb-4 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none"
                             name="pict_senjata" id="pict_senjata" type="file">

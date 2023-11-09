@@ -33,6 +33,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.perform')-
 
 Route::get('/logout', [LogoutController::class, 'perform'])->name('logout.perform')->middleware('auth');
 
+Route::get('/loginadmin', [AdminController::class, 'login'])->name('admin.login');
 Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/buat', [AdminController::class, 'create'])->name('admin.create');
 Route::post('/store', [AdminController::class, 'store'])->name('admin.store');
@@ -41,17 +42,3 @@ Route::get('/edit/{content:id}', [AdminController::class, 'edit'])->name('admin.
 Route::put('/update/{content:id}', [AdminController::class, 'update'])->name('admin.update');
 Route::get('/baca/{content:id}', [AdminController::class, 'read'])->name('admin.read');
 
-Route::get('/succes', function () {
-    return view('berhasil');
-})->name('Succes');
-
-Route::get('/akungagal', function () {
-    return view('akungagal');
-});
-
-Route::get('/berhasil', function () {
-    return view('berhasil');
-});
-Route::get('/cobajah', function () {
-    return view('cobajah');
-});

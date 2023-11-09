@@ -5,14 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
-    <title>Dashboard Admin BudayaPedia</title>
+    <title>Admin | Dashboard</title>
 
     <script src=//code.jquery.com/jquery-3.5.1.slim.min.js integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
         crossorigin=anonymous></script>
-    {{-- <script src="resources/js/index.js"></script> --}}
-
-    <!-- Main Styling -->
-    {{-- <link href="resources/css/style.css" rel="stylesheet" /> --}}
 
 </head>
 
@@ -149,7 +145,7 @@
                                             {{ $content->updated_at }}</td>
                                         <td class="p-2 space-x-2 whitespace-nowrap">
                                             <a href="{{ url("baca/$content->id") }}" >
-                                                <button id="readButton" type="button" data-modal-toggle="read-user-modal" data-target="#read-content-modal" data-url="{{ route('admin.read', $content->id)}}"
+                                                <button id="readButton" type="button"
                                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500">
                                                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -163,9 +159,8 @@
                                                 Baca
                                                 </button>
                                             </a>
-                                            <a href="{{ url("edit/$content->id") }}" data-id="{{ $content->id }}">
-                                                <button id="editButton" type="button" data-modal-toggle="edit-user-modal"
-                                                data-target="#edit-content-modal"
+                                            <a href="{{ url("edit/$content->id") }}">
+                                                <button id="editButton" type="button"
                                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-green-500 hover:bg-green-700 focus:ring-4 focus:ring-green-500">
                                                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -180,10 +175,8 @@
                                                 </button>
                                             </a>
 
-                                            <a href="{{ url("delete/$content->id") }}" data-id="{{ $content->id }}"
-                                                data-modal-toggle="delete-user-modal"
-                                                data-target="#delete-content-modal">
-                                                <button id="deleteButton" data- type="button"
+                                            <a href="{{ url("delete/$content->id") }}">
+                                                <button id="deleteButton" type="button"
                                                     onclick="return confirm('Apakah anda yakin?');"
                                                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">
                                                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
@@ -205,7 +198,7 @@
                 </div>
             </div>
         </div>
-        <div
+        {{-- <div
             class="mt-64 sticky bottom-0 right-0 items-center w-full p-4 bg-brown-50 border-t border-gray-200 sm:flex sm:justify-between">
             <div class="flex items-center mb-4 sm:mb-0">
                 <a href="#"
@@ -250,7 +243,7 @@
                     </svg>
                 </a>
             </div>
-        </div>
+        </div> --}}
 
     </main>
 </body>

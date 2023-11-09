@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <title>Detail Provinsi {{ $content->nama_prov }}</title>
 </head>
 
 <body class="font-poppins">
+    {{-- NAVIGATION BAR  --}}
     <nav class="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
         <div class="flex flex-wrap justify-between p-3 ml-9">
             <a href="{{ route('content.home') }}">
@@ -23,34 +24,35 @@
                 <ul
                     class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white ">
                     <li>
-                        <a href="{{ route('content.home') }}" class="block py-2 pl-3 pr-1 text-black bg-white rounded md:bg-transparent "
+                        <a href="{{ route('content.home') }}"
+                            class="block py-2 pl-3 pr-1 text-black bg-white rounded md:bg-transparent "
                             aria-current="page">Beranda</a>
                     </li>
                     <li>
                         <a href="{{ route('content.provinsi') }}"
-                            class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent ">Provinsi</a>
+                            class="block py-2 pl-3 pr-1 text-black rounded hover:bg-gray-100 md:hover:bg-transparent ">Provinsi</a>
                     </li>
                     <li>
-                        <div>
-                            <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                              <span class="absolute -inset-1.5"></span>
-                              <span class="sr-only">Open user menu</span>
-                              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                            </button>
-                        </div>
+                        <a href="{{ route('logout.perform') }}"
+                            class="block py-2 pl-3 pr-3 text-black rounded hover:bg-red-500 md:hover:bg-red-500">Logout</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    {{-- MAIN CONTENT  --}}
     <main>
         <div class="bg-white flex flex-col mt-12">
 
             <div class="text-stone-800 text-sm font-medium ml-24 mt-12 max-md:ml-2.5">
-                <span class="font-light text-red-400">Beranda</span>
-                <span class="font-light text-stone-600">/ {{ $content->nama_prov }} /</span>
-                <span class="font-medium text-stone-800">Detail Budaya</span>
+                <a href="/">
+                    <span class="font-light text-red-400">Beranda</span>
+                </a>
+                <a href="{{ route('content.provinsi') }}">
+                    <span class="font-light text-stone-600">/ Provinsi /</span>
+                </a>
+                <span class="font-medium text-stone-800">{{ $content->nama_prov }} </span>
             </div>
             <div class="text-stone-800 font-bold text-3xl ml-24 mt-6 max-md:ml-2.5">{{ $content->nama_prov }}</div>
             
@@ -115,7 +117,7 @@
                     <h3 class="flex justify-center text-lg font-bold text-black text-justify leading-7 self-center mb-3 max-w-[793px] mt-5 max-md:max-w-full max-md:mb-2.5">Baju Adat</h3>
                     <div class="justify-center ml-10 mr-10">
                         <div class="item-center self-center justify-center"> 
-                            <img loading="lazy" srcset="{{ URL('assets\img\$content->baju_adat') }}" alt="{{ $content->pict_baju_adat }}" class="justify-center object-cover h-56 w-96 object-center overflow-hidden self-center max-w-full grow mt-1"/>
+                            <img loading="lazy" srcset="{{ URL('assets\img\$content->pict_baju_adat') }}" alt="{{ $content->pict_baju_adat }}" class="justify-center object-cover h-56 w-96 object-center overflow-hidden self-center max-w-full grow mt-1"/>
                         </div>
                     </div>
                 </div>
@@ -125,12 +127,12 @@
                     </div>
                 </div>
     
-                {{-- BAJU ADAT  --}}
+                {{-- RUMAH ADAT  --}}
                 <div id="pict3" class="target"> 
                     <h3 class="flex justify-center text-lg font-bold text-black text-justify leading-7 self-center mb-3 max-w-[793px] mt-5 max-md:max-w-full max-md:mb-2.5">Rumah Adat</h3>
                     <div class="justify-center ml-10 mr-10">
                         <div class="item-center self-center justify-center"> 
-                            <img loading="lazy" srcset="{{ URL('assets\img\rumah-jawa-timur.png') }}" alt="{{ $content->pict_sejarah }}" class="justify-center object-cover h-56 w-96 object-center overflow-hidden self-center max-w-full grow mt-1"/>
+                            <img loading="lazy" srcset="{{ URL('assets\img\$content->pict_rumah_adat') }}" alt="{{ $content->pict_rumah_adat }}" class="justify-center object-cover h-56 w-96 object-center overflow-hidden self-center max-w-full grow mt-1"/>
                         </div>
                     </div>
                 </div>
@@ -145,7 +147,7 @@
                     <h3 class="flex justify-center text-lg font-bold text-black text-justify leading-7 self-center mb-3 max-w-[793px] mt-5 max-md:max-w-full max-md:mb-2.5">Lagu Daerah</h3>
                     <div class="justify-center ml-10 mr-10">
                         <div class="item-center self-center justify-center"> 
-                            <img loading="lazy" srcset="{{ URL('assets\img\rumah-jawa-timur.png') }}" alt="{{ $content->pict_lagu_daerah }}" class="justify-center object-cover h-56 w-96 object-center overflow-hidden self-center max-w-full grow mt-1"/>
+                            <img loading="lazy" srcset="{{ URL('assets\img\$content->pict_lagu_daerah') }}" alt="{{ $content->pict_lagu_daerah }}" class="justify-center object-cover h-56 w-96 object-center overflow-hidden self-center max-w-full grow mt-1"/>
                         </div>
                     </div>
                 </div>
@@ -160,7 +162,7 @@
                     <h3 class="flex justify-center text-lg font-bold text-black text-justify leading-7 self-center mb-3 max-w-[793px] mt-5 max-md:max-w-full max-md:mb-2.5">Senjata</h3>
                     <div class="justify-center ml-10 mr-10">
                         <div class="item-center self-center justify-center"> 
-                            <img loading="lazy" srcset="{{ URL('assets\img\rumah-jawa-timur.png') }}" alt="{{ $content->pict_senjata }}" class="justify-center object-cover h-56 w-96 object-center overflow-hidden self-center max-w-full grow mt-1"/>
+                            <img loading="lazy" srcset="{{ URL('assets\img\$content->pict_senjata') }}" alt="{{ $content->pict_senjata }}" class="justify-center object-cover h-56 w-96 object-center overflow-hidden self-center max-w-full grow mt-1"/>
                         </div>
                     </div>
                 </div>
@@ -175,6 +177,7 @@
         </div>
     </main>
 
+    {{-- FOOTER  --}}
     <footer>
         <div class="bg-brown-50 flex-col pt-7 pb-10">
             <div class="self-center flex max-w-full items-start justify-between gap-5 max-md:flex-wrap">
@@ -191,33 +194,10 @@
                         Kota Malang
                     </div>
                 </div>
-                {{-- <div class="flex flex-col w-[100px] self-start">
-                    <div
-                      class="text-red-950 text-center text-xl font-medium self-stretch whitespace-nowrap"
-                    >
-                      Find us:
-                    </div>
-                    <div class="w-[100px] flex items-start justify-between gap-5 mt-3 max-md:justify-center">
-                        <img
-                            loading="lazy"
-                            src="{{ URL('assets\img\icon-twitter.svg') }}"
-                            class="aspect-square object-cover object-center w-full overflow-hidden flex-1"
-                        />
-                        <img
-                            loading="lazy"
-                            src="{{ URL('assets\img\icon-instagram.svg') }}"
-                            class="aspect-[1.25] object-cover object-center w-full fill-red-950 overflow-hidden flex-1 my-auto"
-                        />
-                        <img
-                            loading="lazy"
-                            src="{{ URL('assets\img\icon-email.svg') }}"
-                            class="aspect-square object-cover object-center w-full fill-red-950 overflow-hidden flex-1 my-auto"
-                        />
-                    </div>
-                </div> --}}
-                <div class="flex flex-col mr-96">
+
+                <div class="flex flex-col mr-28">
                     <div class="text-red-950 text-center text-lg font-medium">Find us:</div>
-                    <div class="flex w-[100px] max-w-full items-end justify-between gap-5 mt-3 max-md:justify-center">
+                    <div class="flex w-[150px] max-w-full items-end justify-between gap-5 mt-3 max-md:justify-center">
                         <img loading="lazy" srcset="{{ URL('assets\img\icon-twitter.svg') }}"
                             class="aspect-[1.25] object-cover object-center w-full fill-red-950 overflow-hidden flex-1 my-auto" />
                         <img loading="lazy" srcset="{{ URL('assets\img\icon-instagram.svg') }}"

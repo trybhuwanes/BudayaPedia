@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     //
+    public function login() {
+        return view('admin.login');
+    }
     public function dashboard() {
         $content = Content::all();
-        // dd($rekening);
         return view('admin.dashboard', compact(['content']));
     }
     public function read($id) {
@@ -111,7 +113,7 @@ class AdminController extends Controller
         Storage::delete('public/assets/img/'.$content->pict_sejarah);
         Storage::delete('public/assets/img/'.$content->pict_baju_adat);
         Storage::delete('public/assets/img/'.$content->pict_rumah_adat);
-        Storage::delete('public/assets/img/'.$content->lagu_daerah);
+        // Storage::delete('public/assets/img/'.$content->lagu_daerah);
         Storage::delete('public/assets/img/'.$content->pict_senjata);
 
         $pictSejarah = $request->file('pict_sejarah');        

@@ -1,7 +1,7 @@
 <!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> @vite('resources/css/app.css') <link
     rel="stylesheets" href="">
-<title>sign up</title>
+<title>BudayaPedia | Daftar</title>
 </head>
 
 <body class="font-poppins">
@@ -34,42 +34,42 @@
     </nav>
 
     <main>
-        <div style="width: 100%; height: 100%; position: relative; background: white">
+        <div style="width: 100%; height: 100%; left:35%; position: relative; background: white">
             <div
-                style="left: 395px; top: 125px; position: absolute; color: #332317; font-size: 28px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+                style="top: 125px; left:-3%; position: absolute; color: #332317; font-size: 28px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                 Lengkapi Keterangan Formulir Anda
             </div>
             <form method="POST" action="{{ route('register.perform') }}" enctype="multipart/form-data">
                 @csrf
-                <div style="width: 350px; height: 75px; left: 466px; top: 165px; position: absolute">
+                <div style="width: 350px; height: 75px; top: 165px; position: absolute">
                     <div
                         style="left: 10px; top: 20px; position: absolute; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                         Nama</div>
                     <input type="text" id="name" name="name"
                         style="padding-left: 15px; width: 350px; height: 50px; left: 0px; top: 50px; position: absolute; background: #F3F3F3; border-radius: 8px; border: 1px solid #BB8760;">
                 </div>
-                <div style="height: 75px; left: 466px; top: 285px; position: absolute">
+                <div style="height: 75px; top: 285px; position: absolute">
                     <div
                         style="left: 10px; position: absolute; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                         Email</div>
                     <input type="email" id="email" name="email"
                         style=" padding-left: 15px; width: 350px; height: 50px; left: 0px; top: 30px; position: absolute; background: #F3F3F3; border-radius: 8px; border: 1px solid #BB8760;">
                 </div>
-                <div style="height: 75px; left: 466px; top: 385px; position: absolute">
+                <div style="height: 75px; top: 385px; position: absolute">
                     <div
-                        style="left: 10px; position: absolute; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+                        style="position: absolute; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                         Password</div>
                     <input type="password" id="password" name="password"
                         style=" padding-left: 15px; width: 350px; height: 50px; left: 0px; top: 30px; position: absolute; background: #F3F3F3; border-radius: 8px; border: 1px solid #BB8760;">
                 </div>
-                <div style="width: 350px; height: 45px; left: 466px; top: 500px; position: absolute">
+                <div style="width: 350px; height: 45px; top: 500px; position: absolute">
                     <button type="submit" class="bg-brown2-500 hover:bg-brown2-700 text-white font-bold py-2 px-20 h-12 w-full rounded ">
                         Daftar Sekarang
                     </button>
                 </div>
             </form>
             
-            <div style="width: 350px; height: 45px; left: 466px; top: 560px; position: absolute">
+            <div style="width: 350px; height: 45px; top: 560px; position: absolute">
                 <a href="{{ route('login') }}">
                     <button
                      class="bg-transparent hover:bg-brown2-500 text-brown2-700 font-semibold hover:text-white py-2 px-4 h-12 w-full border border-brown2-500 hover:border-transparent rounded">
