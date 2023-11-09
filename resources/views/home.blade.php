@@ -32,7 +32,7 @@
                 style="width: 952px; height: 360px; left: 0px; top: 0px; position: absolute; background: #D3BA84; border-radius: 8px">
             </div> -->
             <img style="width: 1110px; height: 360px; left: 0px; top: 0px; position: absolute; border-radius: 8px"
-                src="assetss/img/image.png" />
+                src="assets/img/image.png" />
             <div
                 style="left: 170px; top: 137px; position: absolute; text-align: center; color: white; font-size: 30px; font-family: Jawa Palsu; font-weight: 400; letter-spacing: 3px; word-wrap: break-word">
                 Kunjungi Berbagai Budaya Nusantara</div>
@@ -58,7 +58,7 @@
                     style="width: 45px; height: 45px; left: 50px; top: 0px; position: absolute; background: #C4C4C4; border-radius: 9999px">
                 </div> -->
                 <img style="width: 45px; height: 45px; left: 0px; top: 0px; position: absolute; border-radius: 25px"
-                    src="assetss/img/dian.jpeg" />
+                    src="assets/img/dian.jpeg" />
             </div>
             <div
                 style="width: 0px; height: 33.50px; left: 799px; top: 6px; position: absolute; border: 1px #594745 solid">

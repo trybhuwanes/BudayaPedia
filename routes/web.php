@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ContentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/detail', function () {
     return view('detail');
 });
 
-Route::get('/admin', function () {
-    return view('admin/dashboard');
-});
+// Route::get('/admin', function () {
+//     return view('admin/dashboard');
+// });
+Route::get('/admin', [ContentController::class, 'dashboard'])->name('admin.dashboard');
+
 
 Route::get('/buat', function () {
     return view('admin/create');
@@ -47,4 +49,8 @@ Route::get('/signup', function () {
 
 Route::get('/akungagal', function () {
     return view('akungagal');
+});
+
+Route::get('/cobajah', function () {
+    return view('cobajah');
 });
