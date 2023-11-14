@@ -52,7 +52,7 @@
             <div
                 style="left: 50%; top: 150px; position: absolute; color: #332317; font-size: 25px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                 Masuk Sebagai Admin
-                <form action="{{ route('login.perform') }}" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     {{-- @csrf --}}
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <div style="height: 75px; margin-top: 25px; position: absolute">

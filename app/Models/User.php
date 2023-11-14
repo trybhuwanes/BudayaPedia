@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -25,9 +27,13 @@ class User extends Authenticatable
         'role'
     ];
 
-    public function setPasswordAttribute($value) {
-        $this->attributes['password'] = bcrypt($value);
-    }
+    // public function setPasswordAttribute($value) {
+    //     $this->attributes['password'] = bcrypt($value);
+    // }
+    // public function setPasswordAttribute($password){
+    //     $this->attributes['password'] = Hash::needsRehash($password) ? Hash::make($password) : $password;
+    // }
+    
 
     /**
      * The attributes that should be hidden for serialization.
@@ -47,4 +53,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected function role(): Attribute {
+        return new Attribute(
+            get: fn ($value) =>  ["user", "admin"][$value],
+        );
+    }
 }

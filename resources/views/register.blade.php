@@ -45,21 +45,21 @@
                     <div
                         style="left: 10px; top: 20px; position: absolute; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                         Nama</div>
-                    <input type="text" id="name" name="name"
+                    <input type="text" id="name" name="name" required
                         style="padding-left: 15px; width: 350px; height: 50px; left: 0px; top: 50px; position: absolute; background: #F3F3F3; border-radius: 8px; border: 1px solid #BB8760;">
                 </div>
                 <div style="height: 75px; top: 285px; position: absolute">
                     <div
                         style="left: 10px; position: absolute; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                         Email</div>
-                    <input type="email" id="email" name="email"
+                    <input type="email" id="email" name="email" required
                         style=" padding-left: 15px; width: 350px; height: 50px; left: 0px; top: 30px; position: absolute; background: #F3F3F3; border-radius: 8px; border: 1px solid #BB8760;">
                 </div>
                 <div style="height: 75px; top: 385px; position: absolute">
                     <div
                         style="position: absolute; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                         Password</div>
-                    <input type="password" id="password" name="password"
+                    <input type="password" id="password" name="password" required
                         style=" padding-left: 15px; width: 350px; height: 50px; left: 0px; top: 30px; position: absolute; background: #F3F3F3; border-radius: 8px; border: 1px solid #BB8760;">
                 </div>
                 <div style="width: 350px; height: 45px; top: 500px; position: absolute">

@@ -57,6 +57,9 @@
                     </ul>
 
                 </div>
+                <a href="{{ route('admin.logout') }}">
+                    <button type="button" class="ml-14 focus:outline-none w-32 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Logout</button>
+                </a>
             </div>
 
         </div>
@@ -73,22 +76,22 @@
                     <h1 class="pt-3 text-xl font-semibold text-gray-900 sm:text-2xl ">Beranda</h1>
                 </div>
                 <div class="sm:flex">
-                    {{-- <div
+                    <div
                         class="mx-8 pb-3 items-center hidden sm:flex sm:divide-x sm:divide-gray-100 sm:mb-0">
                         <form class="lg:pr-3" action="#" method="GET">
                             <label for="users-search" class="sr-only">Search</label>
                             <div class="relative mt-1 lg:w-64 xl:w-96">
                                 <input type="text" id="users-search"
                                     class="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
-                                    placeholder="Search for users">
+                                    placeholder="Search for content">
                             </div>
                         </form>
 
-                    </div> --}}
-                    {{-- <div class="flex items-center ml-auto space-x-2 sm:space-x-3"> --}}
+                    </div>
+                    <div class="flex items-center ml-auto space-x-2 sm:space-x-3">
                         <a href="{{ route('admin.create') }}">
                             <button id="addButton" type="button" 
-                            class="ml-8 mb-4 mr-8 inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-black rounded-lg bg-darkbrown-50 hover:bg-brown2-50 focus:ring-4 focus:ring-darkbrown sm:w-auto">
+                            class="ml-4 mb-4 mr-8 inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-black rounded-lg bg-darkbrown-50 hover:bg-brown2-50 focus:ring-4 focus:ring-darkbrown sm:w-auto">
                             <svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -98,7 +101,7 @@
                             Add Content
                         </button>
                         </a>
-                    {{-- </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -246,6 +249,28 @@
         </div> --}}
 
     </main>
+
+    {{-- <script>
+        $(document).ready(function(){
+            function fetch_content(query = '') {
+                $.ajax({
+                    url: "{{ route('admin.search') }}",
+                    method: 'GET',
+                    data: {query:query},
+                    dataType: json,
+                    'success: function(data)'
+                    {
+                        $('tbody').html(data.table_data);
+                        $(#total_records).text(data.total_data);
+                    }
+                })
+            }
+            $(document).on('keyup', '#search', function(){
+                var query = $(this).val();
+                fetch_content(query);
+            });
+        });
+    </script> --}}
 </body>
 
 </html>

@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 class ContentController extends Controller
 {
     //
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function home() {
         $content = Content::all()->take(4);
         return view('home', compact(['content']));

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginAdminController;
 use App\Models\Content;
 
 /*
@@ -19,26 +20,31 @@ use App\Models\Content;
 |
 */
 
-Route::get('/', [ContentController::class, 'home'])->name('content.home')->middleware('auth');
-Route::get('/detail/{content:id}', [ContentController::class, 'detail'])->name('content.detail')->middleware('auth');
-Route::get('/provinsi', [ContentController::class, 'provinsi'])->name('content.provinsi')->middleware('auth');
-
-
+$this->urlAdmin = "admin";
 Route::get('/register', [RegisterController::class, 'show'])->name('register')->middleware('guest');
-Route::post('/register', [RegisterController::class, 'register'])->name('register.perform')->middleware('guest');
+Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
 Route::get('/berhasil', [RegisterController::class, 'success'])->name('user.success')->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'show'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login'])->name('login.perform')->middleware('guest');
 
 Route::get('/logout', [LogoutController::class, 'perform'])->name('logout.perform')->middleware('auth');
+Route::get('/', [ContentController::class, 'home'])->name('content.home')->middleware('auth');
+Route::get('/detail/{content:id}', [ContentController::class, 'detail'])->name('content.detail')->middleware('auth');
+Route::get('/provinsi', [ContentController::class, 'provinsi'])->name('content.provinsi')->middleware('auth');
 
-Route::get('/loginadmin', [AdminController::class, 'login'])->name('admin.login');
-Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('/buat', [AdminController::class, 'create'])->name('admin.create');
-Route::post('/store', [AdminController::class, 'store'])->name('admin.store');
-Route::get('/delete/{content:id}', [AdminController::class, 'delete'])->name('admin.delete');
-Route::get('/edit/{content:id}', [AdminController::class, 'edit'])->name('admin.edit');
-Route::put('/update/{content:id}', [AdminController::class, 'update'])->name('admin.update');
-Route::get('/baca/{content:id}', [AdminController::class, 'read'])->name('admin.read');
+Route::prefix($this->urlAdmin)->group(function () {
+    Route::get('/login', [LoginAdminController::class, 'formLogin'])->name('admin.login');
+    Route::post('/login', [LoginAdminController::class, 'login'])->name('admin.login.perform');
 
+    Route::middleware(['auth:admin'])->group(function () {
+        Route::get('/logout', [LoginAdminController::class, 'logout'])->name('admin.logout');
+        Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/buat', [AdminController::class, 'create'])->name('admin.create');
+        Route::post('/store', [AdminController::class, 'store'])->name('admin.store');
+        Route::get('/delete/{content:id}', [AdminController::class, 'delete'])->name('admin.delete');
+        Route::get('/edit/{content:id}', [AdminController::class, 'edit'])->name('admin.edit');
+        Route::put('/update/{content:id}', [AdminController::class, 'update'])->name('admin.update');
+        Route::get('/baca/{content:id}', [AdminController::class, 'read'])->name('admin.read');
+    });
+});

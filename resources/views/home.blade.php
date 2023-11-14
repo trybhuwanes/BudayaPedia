@@ -42,6 +42,15 @@
 
     {{-- MAIN CONTENT  --}}
     <main>
+        {{-- <div class="card-body">
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+            You are a User.
+        </div> --}}
         <div class="bg-white flex flex-col pr-px">
             <div class="self-center flex w-full max-w-full flex-col mt-9 px-16">
                 {{-- HERO EMAGE  --}}

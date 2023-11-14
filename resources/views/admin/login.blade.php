@@ -20,7 +20,7 @@
             <div
                 style="left: 50%; top: 150px; position: absolute; color: #332317; font-size: 25px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                 Masuk Sebagai Admin
-                <form action="{{ route('login.perform') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.login.perform') }}" method="POST" enctype="multipart/form-data">
                     {{-- @csrf --}}
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <div style="height: 75px; margin-top: 25px; position: absolute">
@@ -29,28 +29,28 @@
                             Alamat Email</div>
                         <div
                             style="width: 270px; height: 45px; left: 0px; position: absolute; background: #F3F3F3; border-radius: 8px">
-                            <input type="email" id="email" name="email"
+                            <input type="email" id="email" name="email" required
                                 class="bg-gray-50 border border-brown-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             @if ($errors->has('email'))
-                                <span class="text-danger text-left">{{ $errors->first('email') }}</span>
+                                <span class="text-danger text-left text-sm">{{ $errors->first('email') }}</span>
                             @endif
     
                         </div>
                     </div>
-                    <div style="height: 75px; margin-top: 105px; position: absolute">
+                    <div style="height: 75px; margin-top: 120px; position: absolute">
                         <div
                             style="left: 0px; top: 0px; position: absolute; color: #332317; font-size: 16px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
                             Password</div>
                         <div
                             style="width: 270px; height: 45px; left: 0px; top: 30px; position: absolute; background: #F3F3F3; border-radius: 8px">
-                            <input type="password" id="password" name="password"
+                            <input type="password" id="password" name="password" required
                                 class="bg-gray-50 border border-brown-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                             @if ($errors->has('password'))
-                                <span class="text-danger text-left">{{ $errors->first('password') }}</span>
+                                <span class="text-danger text-left w-64 mt-1">{{ $errors->first('password') }}</span>
                             @endif
                         </div>
                     </div>
-                    <div style="width: 270px; height: 20px; margin-top: 200px; position: absolute">
+                    <div style="width: 270px; height: 20px; margin-top: 230px; position: absolute">
                         <button type="submit"
                             class="text-lg bg-brown2-50 hover:bg-brown2-900 text-white font-bold py-2 px-11 rounded w-full">
                             Masuk

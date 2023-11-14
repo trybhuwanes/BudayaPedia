@@ -12,15 +12,58 @@ class AdminController extends Controller
     public function login() {
         return view('admin.login');
     }
+    
     public function dashboard() {
         $content = Content::all();
         return view('admin.dashboard', compact(['content']));
     }
+
+    // public function search(Request $request) {
+    //     if($request->search) {
+    //         $searchContent = Content::where('nama_prov', 'LIKE', '%', $request->search.'%')->latest()->paginate(15);
+    //         return view('admin.dashboard', compact('searchContent'));
+    //     } else {
+    //         return redirect()->back()->with('message', 'Empty Search');
+    //     }
+    // }
+    public function search(Request $request) {
+        if($request->ajax()) {
+            $output = '';
+            $query = $request->get('query');
+            if($query != '') {
+                $data = DB::table('content')
+                    ->where('nama_prov', 'like', '%'.$query.'%')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            } else {
+                $data = DB::table('content')
+                    ->orderBy('id', 'desc')
+                    ->get();
+            }
+
+            $total_row = $data->count();
+            if($total_row > 0) {
+                foreach($data as $row) {
+                    $output = '
+                    <tr>
+                        <td>' .$row->nama_prov . '</td>
+                        <td>' .$row->created_at . '</td>
+                    </tr>
+                    ';
+                }
+            } else {
+                $output = 
+                '<tr>
+                    <td align="center">No Data Found</td>
+                </tr>';
+            }
+        }
+        
+    }
+
     public function read($id) {
         $content   = Content::whereId($id)->first();
         return view('admin.read')->with('content', $content);
-        // $content = Content::find($id);
-        // return view('admin.read');
     }
     public function create() {
         return view('admin.create');
@@ -93,8 +136,7 @@ class AdminController extends Controller
         // return view('admin.edit', $data);
     }
 
-    public function update(Request $request, Content $content)
-    {
+    public function update(Request $request, Content $content) {
         //validate form
         $this->validate($request, [
             'nama_prov' => 'required',
@@ -113,7 +155,7 @@ class AdminController extends Controller
         Storage::delete('public/assets/img/'.$content->pict_sejarah);
         Storage::delete('public/assets/img/'.$content->pict_baju_adat);
         Storage::delete('public/assets/img/'.$content->pict_rumah_adat);
-        // Storage::delete('public/assets/img/'.$content->lagu_daerah);
+        Storage::delete('public/assets/img/'.$content->pict_lagu_daerah);
         Storage::delete('public/assets/img/'.$content->pict_senjata);
 
         $pictSejarah = $request->file('pict_sejarah');        
@@ -136,20 +178,38 @@ class AdminController extends Controller
         $fileNameSenjata = $request->nama_prov . '-senjata' . '.' . $pictSenjata->extension();
         $pictSenjata->move(public_path('assets/img'), $fileNameSenjata);
 
-        $content->update([
-            'nama_prov'         =>$request->nama_prov,
-            'sejarah'           =>$request->sejarah,
-            'baju_adat'         =>$request->baju_adat,
-            'rumah_adat'        =>$request->rumah_adat,
-            'lagu_daerah'       =>$request->lagu_daerah,
-            'senjata'           =>$request->senjata,
-            'pict_sejarah'      =>$fileNameSejarah,
-            'pict_baju_adat'    =>$fileNameBajuAdat,
-            'pict_rumah_adat'   =>$fileNameRumahAdat,
-            'pict_lagu_daerah'  =>$fileNameLaguDaerah,
-            'pict_senjata'      =>$fileNameSenjata
-        ]);
-        return redirect()->route('admin.dashboard')->with('message', 'Data berhasil diupdate');
+        try {
+            $content->update([
+                'nama_prov'         =>$request->nama_prov,
+                'sejarah'           =>$request->sejarah,
+                'baju_adat'         =>$request->baju_adat,
+                'rumah_adat'        =>$request->rumah_adat,
+                'lagu_daerah'       =>$request->lagu_daerah,
+                'senjata'           =>$request->senjata,
+                'pict_sejarah'      =>$fileNameSejarah,
+                'pict_baju_adat'    =>$fileNameBajuAdat,
+                'pict_rumah_adat'   =>$fileNameRumahAdat,
+                'pict_lagu_daerah'  =>$fileNameLaguDaerah,
+                'pict_senjata'      =>$fileNameSenjata
+            ]);
+            return redirect()->route('admin.dashboard')->with('message', 'Data berhasil diupdate');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('admin.dashboard', 'Data gagal ditambahkan');
+        }
+        // $content->update([
+        //     'nama_prov'         =>$request->nama_prov,
+        //     'sejarah'           =>$request->sejarah,
+        //     'baju_adat'         =>$request->baju_adat,
+        //     'rumah_adat'        =>$request->rumah_adat,
+        //     'lagu_daerah'       =>$request->lagu_daerah,
+        //     'senjata'           =>$request->senjata,
+        //     'pict_sejarah'      =>$fileNameSejarah,
+        //     'pict_baju_adat'    =>$fileNameBajuAdat,
+        //     'pict_rumah_adat'   =>$fileNameRumahAdat,
+        //     'pict_lagu_daerah'  =>$fileNameLaguDaerah,
+        //     'pict_senjata'      =>$fileNameSenjata
+        // ]);
+        // return redirect()->route('admin.dashboard')->with('message', 'Data berhasil diupdate');
 
         // try {
 
