@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "laravel build --output public"
+        "build": "[my-framework] build --output public"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
