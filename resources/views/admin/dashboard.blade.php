@@ -147,7 +147,7 @@
                                         <td class="p-2 text-base font-medium whitespace-nowrap text-black">
                                             {{ $content->updated_at }}</td>
                                         <td class="p-2 space-x-2 whitespace-nowrap">
-                                            <a href="{{ url("baca/$content->id") }}" >
+                                            <a href="{{ url("admin/baca/$content->id") }}" >
                                                 <button id="readButton" type="button"
                                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500">
                                                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
@@ -162,7 +162,7 @@
                                                 Baca
                                                 </button>
                                             </a>
-                                            <a href="{{ url("edit/$content->id") }}">
+                                            <a href="{{ url("admin/edit/$content->id") }}">
                                                 <button id="editButton" type="button"
                                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-green-500 hover:bg-green-700 focus:ring-4 focus:ring-green-500">
                                                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
@@ -178,7 +178,7 @@
                                                 </button>
                                             </a>
 
-                                            <a href="{{ url("delete/$content->id") }}">
+                                            <a href="{{ url("admin/delete/$content->id") }}">
                                                 <button id="deleteButton" type="button"
                                                     onclick="return confirm('Apakah anda yakin?');"
                                                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900">

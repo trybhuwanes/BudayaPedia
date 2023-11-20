@@ -18,49 +18,6 @@ class AdminController extends Controller
         return view('admin.dashboard', compact(['content']));
     }
 
-    // public function search(Request $request) {
-    //     if($request->search) {
-    //         $searchContent = Content::where('nama_prov', 'LIKE', '%', $request->search.'%')->latest()->paginate(15);
-    //         return view('admin.dashboard', compact('searchContent'));
-    //     } else {
-    //         return redirect()->back()->with('message', 'Empty Search');
-    //     }
-    // }
-    public function search(Request $request) {
-        if($request->ajax()) {
-            $output = '';
-            $query = $request->get('query');
-            if($query != '') {
-                $data = DB::table('content')
-                    ->where('nama_prov', 'like', '%'.$query.'%')
-                    ->orderBy('id', 'desc')
-                    ->get();
-            } else {
-                $data = DB::table('content')
-                    ->orderBy('id', 'desc')
-                    ->get();
-            }
-
-            $total_row = $data->count();
-            if($total_row > 0) {
-                foreach($data as $row) {
-                    $output = '
-                    <tr>
-                        <td>' .$row->nama_prov . '</td>
-                        <td>' .$row->created_at . '</td>
-                    </tr>
-                    ';
-                }
-            } else {
-                $output = 
-                '<tr>
-                    <td align="center">No Data Found</td>
-                </tr>';
-            }
-        }
-        
-    }
-
     public function read($id) {
         $content   = Content::whereId($id)->first();
         return view('admin.read')->with('content', $content);
